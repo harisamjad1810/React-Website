@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Mulish;
+}
+
+
+.dark-theme{
+  background-color: #0a0a0a;
+  --main-head : white;
+  --nav-color : #0a0a0a;
+}
+
+/* NavBAr.JSX */
+.navbar{
+  background-color: var(--nav-color);
+}
+
+.navbar .nav-item a{
+  font-weight: 600;
+}
+
+.navbar .nav-item a{
+  color: var(--main-head);
+}
+
+.navbar .nav-item .nav-link:hover {
+  color: #3a64d6;
+}
+
+
+/* Home CSS */
+
+#header{
+  width: 100%;
+  height: 80vh;
+  margin-top: 70px;
+}
+
+#header h1{
+  margin: 10px 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--main-head);
+}
+
+#header .brand-name{
+  color: rgb(22, 117, 242);
+}
+
+#header h3{
+  font-size: 24px;
+  color: var(--main-head);
+  font-weight: 700;
+}
+
+#header .btn-get-started{
+  font-weight: 1000;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 30px ;
+  border-radius: 50px;
+  transition: 0.5s;
+  color: #3498db;
+  border: 2px solid #3498db;
+ text-decoration: none;
+}
+
+#header .btn-get-started:hover{
+  background-color: #3498db;
+  color: black;
+}
+
+.header-img{
+  text-align: right;
+}
+
+#header .animated{
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes up-down {
+
+0% {
+   transform: translateY(10px);
+}
+100% {
+   transform: translateY(-10px);
+}
+
+}
+
+
+.card-img-top{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* Home Effect */
+
+
+.home-text{
+  z-index: 9999;
+}
+
+
+#gooey {
+  height: 20vw;
+  width: 20vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff4f03cd, #ff5c0b);
+  /* background: linear-gradient(to top right,red,blue); */
+
+
+  top: 40%;
+  left: 5%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+
+@keyframes gooey {
+  from {
+      filter: blur(20px);
+      transform: translate(10%, -10%) skew(0);
+  }
+
+  to {
+      filter: blur(30px);
+      transform: translate(-10%, 10%) skew(-12deg);
+  }
+}
+
+
+/* SERVICES */
+
+.our-service{
+  font-weight: bold;
+  color: var(--main-head);
+}
+
+
+.contact-us{
+  color: var(--main-head);
+}
+
+
+
+/* Common.JSX */
+
+.dark_mode {
+  position: absolute;
+  top: 90%;
+  left: 92%;
+ transition: all;
+ /* animation: button 2s ease-in-out infinite alternate-reverse both; */
+}
+
+.dark_mode:active{
+  animation: button 0.0015s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes button {
+  0%{
+    transform: scale(0.7);
+  }
+  25%{
+    transform: scale(1);
+  }
+  0%{
+    transform: scale(0.7);
+    }
+  0%{
+    transform: scale(0.7);
+  }
+}
+
+.dark_mode_label {
+  width: 65px;
+  height: 30px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+      inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.dark_mode_label:after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 180px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+.dark_mode_input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+.dark_mode_input:checked + .dark_mode_label {
+  background: #242424;
+}
+.dark_mode_input:checked + .dark_mode_label:after {
+  left: 62px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+.dark_mode_label:active:after {
+  width: 30px;
+}
+
+.dark_mode_label svg {
+  position: absolute;
+  width: 20px;
+  top: 5px;
+  z-index: 100;
+}
+.dark_mode_label svg.sun {
+  left: 5px;
+  fill: #fff;
+  transition: 0.3s;
+}
+.dark_mode_label svg.moon {
+  left: 40px;
+  fill: #7e7e7e;
+  transition: 0.3s;
+}
+.dark_mode_input:checked + .dark_mode_label svg.sun {
+  fill: #7e7e7e;
+}
+.dark_mode_input:checked + .dark_mode_label svg.moon {
+  fill: #fff;
+}
